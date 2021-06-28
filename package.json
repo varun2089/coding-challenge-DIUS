@@ -1,0 +1,39 @@
+{
+  "name": "coding-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "build:ts": "tsc --pretty --noEmit",
+    "test": "jest -c ./config/jest.config.js --coverage",
+    "lint": "eslint --fix --ext js,ts src/ config/",
+    "clean": "rimraf dist output && jest --clearCache",
+    "qc": "npm run clean && npm run lint && npm run build:ts && npm run test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "eslint": "^7.26.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.23.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "typescript": "^4.3.4",
+    "jest": "^27.0.5",
+    "jest-junit": "^12.2.0",
+    "@types/jest": "^26.0.23",
+    "ts-jest": "^27.0.3",
+    "babel-jest": "^27.0.5",
+    "rimraf": "^3.0.2"
+  },
+  "jest-junit": {
+    "outputDirectory": "output/coverage/jest/junit",
+    "usePathForSuiteName": "true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
